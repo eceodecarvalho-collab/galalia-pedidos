@@ -1,0 +1,464 @@
+/* Paleta marina inspirada en la costa gallega */
+:root {
+  --mar-oscuro: #0c3d3a;
+  --mar: #1a6b63;
+  --espuma: #3fbfb0;
+  --agua: #e7f6f3;
+  --arena: #f4efe3;
+  --crema: #fffdf8;
+  --texto: #163532;
+  --suave: #4a6a66;
+  --oro: #c4a35a;
+  --aviso: #8a4b16;
+  --aviso-fondo: #fff4e6;
+  --error: #9b2c2c;
+  --sombra: 0 12px 28px rgba(12, 61, 58, 0.1);
+  --radio: 18px;
+  --fuente: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --titulo: Georgia, "Palatino Linotype", Palatino, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  color: var(--texto);
+  background: linear-gradient(180deg, var(--agua) 0%, var(--crema) 320px);
+  line-height: 1.5;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--titulo);
+  line-height: 1.25;
+  margin: 0 0 0.4em;
+}
+
+h1 { font-size: 1.85rem; color: #fff; }
+h2 { font-size: 1.55rem; color: var(--mar-oscuro); }
+h3 { font-size: 1.2rem; }
+
+/* ----- Cabecera ----- */
+.cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 6vw 1.75rem;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(63, 191, 176, 0.25), transparent 40%),
+    linear-gradient(160deg, #072824 0%, var(--mar-oscuro) 55%, #14534e 100%);
+  color: #fff;
+}
+
+.cabecera__marca {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.cabecera__origen {
+  margin: 0;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: #9ee0d7;
+}
+
+.cabecera__eslogan {
+  margin: 0;
+  color: #d6efe9;
+  font-size: 0.95rem;
+}
+
+.cabecera__carrito {
+  color: var(--mar-oscuro);
+  background: #fff;
+  text-decoration: none;
+  font-weight: 650;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.burbuja {
+  min-width: 1.4em;
+  height: 1.4em;
+  padding: 0 0.35em;
+  border-radius: 999px;
+  background: var(--espuma);
+  color: var(--mar-oscuro);
+  font-size: 0.85rem;
+  display: inline-grid;
+  place-items: center;
+}
+
+.aviso-precios {
+  margin: 0;
+  padding: 0.85rem 6vw;
+  background: var(--aviso-fondo);
+  color: var(--aviso);
+  border-bottom: 1px solid #f0d3a8;
+  font-size: 0.95rem;
+}
+
+/* ----- Secciones ----- */
+.seccion {
+  padding: 2.2rem 6vw;
+}
+
+.seccion--arena {
+  background: var(--arena);
+}
+
+.seccion--confirmacion {
+  background: #eaf8f4;
+  border-top: 4px solid var(--espuma);
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ----- Tarjetas de producto ----- */
+.tarjeta {
+  background: var(--crema);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d9ebe6;
+}
+
+.ilustracion {
+  background: linear-gradient(180deg, #bfe8e1, #eef8f6);
+  min-height: 170px;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.ilustracion svg {
+  width: 130px;
+  height: 150px;
+}
+
+.cuerpo {
+  padding: 1.15rem 1.2rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.tipo {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mar);
+  font-weight: 700;
+}
+
+.cientifico {
+  margin: 0;
+  color: var(--suave);
+  font-size: 0.95rem;
+}
+
+.alegaciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0.2rem 0;
+  padding: 0;
+}
+
+.alegaciones li,
+.pastilla {
+  font-size: 0.75rem;
+  background: var(--agua);
+  color: var(--mar-oscuro);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+
+.nutri, .ingredientes, .alegacion, .dosis {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--suave);
+}
+
+.alegacion {
+  font-style: italic;
+}
+
+.aviso-producto {
+  margin: 0.15rem 0 0;
+  font-size: 0.82rem;
+  background: var(--aviso-fondo);
+  color: var(--aviso);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+}
+
+.precio {
+  margin: 0.4rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--mar-oscuro);
+}
+
+.ejemplo {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--aviso);
+  letter-spacing: 0.02em;
+}
+
+.acciones {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.contador {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #b7d6d0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.contador button {
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  color: var(--mar);
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.contador input {
+  width: 2.4rem;
+  border: 0;
+  text-align: center;
+  font: inherit;
+  background: transparent;
+}
+
+/* Quita las flechas nativas del input number */
+.contador input::-webkit-outer-spin-button,
+.contador input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.contador input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ----- Botones ----- */
+.boton,
+.btn-anadir {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+  border-radius: 999px;
+  padding: 0.6rem 1.05rem;
+  background: var(--mar);
+  color: #fff;
+}
+
+.boton:hover,
+.btn-anadir:hover,
+.contador button:hover,
+.enlace-quitar:hover {
+  filter: brightness(1.08);
+}
+
+.boton--principal {
+  background: var(--mar-oscuro);
+  padding: 0.75rem 1.3rem;
+}
+
+.boton--suave {
+  background: #fff;
+  color: var(--mar-oscuro);
+  border: 1px solid #b7d6d0;
+}
+
+/* ----- Carrito ----- */
+.vacio {
+  color: var(--suave);
+  margin: 0;
+}
+
+.linea {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1rem;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 4px 14px rgba(12, 61, 58, 0.06);
+}
+
+.linea h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.linea__datos {
+  color: var(--suave);
+  font-size: 0.9rem;
+  margin: 0.15rem 0 0;
+}
+
+.linea__acciones {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.enlace-quitar {
+  border: 0;
+  background: none;
+  color: var(--error);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+}
+
+.total {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.2rem;
+}
+
+.nota-ejemplo {
+  margin: 0;
+  color: var(--aviso);
+  font-size: 0.88rem;
+}
+
+/* ----- Formulario ----- */
+form {
+  max-width: 36rem;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.campo label {
+  display: block;
+  font-weight: 650;
+  margin-bottom: 0.3rem;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #b7d6d0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.boton:focus-visible,
+.btn-anadir:focus-visible,
+.contador button:focus-visible,
+.enlace-quitar:focus-visible,
+.cabecera__carrito:focus-visible {
+  outline: 3px solid var(--espuma);
+  outline-offset: 2px;
+}
+
+.campo input.invalido,
+.campo textarea.invalido {
+  border-color: var(--error);
+  background: #fff5f5;
+}
+
+.error {
+  margin: 0.35rem 0 0;
+  color: var(--error);
+  font-size: 0.88rem;
+}
+
+.resumen {
+  background: #fff;
+  border-radius: var(--radio);
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--sombra);
+  margin: 1rem 0;
+  max-width: 40rem;
+}
+
+.resumen h3 {
+  font-size: 1.05rem;
+  margin: 0.8rem 0 0.3rem;
+}
+
+.resumen ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.pie {
+  padding: 1.4rem 6vw 2rem;
+  background: var(--mar-oscuro);
+  color: #d6efe9;
+  font-size: 0.9rem;
+}
+
+.pie p { margin: 0.2rem 0; }
+
+.aviso-js {
+  margin: 0;
+  padding: 0.8rem 6vw;
+  background: #9b2c2c;
+  color: #fff;
+}
+
+.texto-suave {
+  color: var(--suave);
+}
+
+@media (max-width: 600px) {
+  .cabecera { padding: 1rem 5vw 1.3rem; }
+  .seccion { padding: 1.6rem 5vw; }
+  h1 { font-size: 1.55rem; }
+  .linea {
+    grid-template-columns: 1fr;
+  }
+}

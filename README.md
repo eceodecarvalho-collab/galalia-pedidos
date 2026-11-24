@@ -55,3 +55,5 @@ Si tienes dudas, abre un *issue* en este repositorio o escribe a la autora.
 ## 👩‍💻 Autora
 
 Eulalia Ceo de Carvalho · Estudiante del Máster Full Stack de Conquer Blocks
+Proyecto de pedidos de Galalia Algas - clase de Git
+Proyecto de pedidos de Galalia Algas - clase de Git
